@@ -10,6 +10,6 @@ def predict():
      json_ = request.json
      query_df = pd.DataFrame(json_, index=[0])
      query = pd.get_dummies(query_df)
-     model = load_model('trained_model_finalized')
+     model = load_model('model.h5')
      prediction = model.predict(query)
      return jsonify({'prediction': prediction.tolist()})
